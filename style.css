@@ -1,0 +1,445 @@
+:root {
+  --font-reg: normal normal 400 16px 'Karla';
+	--font-bold: normal normal 700 16px 'Karla';
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/* font: normal normal 12px 'Karla'; */
+	font: var(--font-reg);
+}
+
+section{
+  padding-bottom:10vh;
+}
+
+a {
+	color:black;
+	text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  margin: 0;
+  letter-spacing: .75rem;
+  text-align: right;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 12px;
+  line-height: .5;
+}
+
+#about p, .zoom p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+.moreinfo a {
+	color:white;
+	z-index: 9999;
+}
+
+.small {
+	font-size: 12px;
+}
+
+.b {
+	font-weight: bold;
+}
+.invert .sectiontext, .invert footer, .invert header, .invert footer a {
+  color:black;
+}
+.sectiontext {
+  filter:opacity(1);
+    position: absolute;
+		right: 2rem;
+    color:white;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    margin-top: -30vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.sectiontext button {
+  margin-top:1rem;
+  background-color: rgba(0,0,0,0);
+}
+
+#mainphotos, #about {
+  width: 80vw;
+    margin: 0 10vw;
+    /* padding: 320px 0; */
+}
+
+#about {
+  display: none;
+  width: 50vw;
+  position: absolute;
+  /* display: flex; */
+}
+
+#about img {
+  padding-left:10vw;
+}
+
+.entry img{
+  /* margin-top:120px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project_text{
+	min-width:300px;
+	padding-bottom:8rem;
+}
+
+.project_img{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap:8rem;
+	/* padding-right: 16rem; */
+}
+
+.project_img > *{
+	/* padding-left: 8rem; */
+}
+
+.story {
+	margin: 10vh 0;
+}
+
+/* Keep enough scrollable space for short project pages. */
+#mainphotos.project-open {
+  padding-bottom: 100vh;
+}
+
+#mainphotos > :nth-child(2n).entry, #mainphotos > :nth-child(2n).story{
+	display: flex;
+	justify-content: flex-end;
+  /* text-align: right; */
+  /* align-items: flex-end; */
+}
+
+/* helps the iframe */
+#mainphotos > :nth-child(2n).entry.open, #mainphotos > :nth-child(2n).story.open{
+	justify-content: flex-start;
+}
+
+#mainphotos img, #about img {
+  max-width: 100%;
+}
+
+.imgscalecontainer {
+  width:800px;
+  height:500px;
+}
+
+.cover, .imgscalecontainer > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+	width:100%;
+	height:100%;
+	object-fit: cover;
+}
+
+.zoom {
+  display: none;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+
+
+
+
+div.description :first-child{
+  font-weight: bold;
+}
+
+
+
+.but{
+  filter:opacity(1);
+	z-index:9999;
+  color: white;
+  border: 1px solid white;
+  border-radius: .5rem;
+  padding: .5rem 2rem;
+  background-color: rgba(0,0,0,0);
+  font-size: 12px;
+}
+
+header, footer{
+	position: fixed;
+	width:100vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+}
+
+header {
+  top:0;
+}
+
+header *, footer *{
+	padding:2rem 3rem;
+}
+
+footer {
+	bottom:0px;
+	justify-content: flex-start;
+}
+
+.role{
+  text-align: right;
+}
+
+.projectimg{
+	object-position: 50% 50%;
+	object-fit: cover;
+	width:100vw;
+	height:100vh;
+	flex-wrap: wrap-reverse;
+
+}
+
+
+
+/* .filtereffect {
+	filter:blur(4rem) grayscale(1) brightness(.3);
+	animation: fadeIn linear .5s;
+}
+
+@keyframes fadeIn {
+	0% {filter:blur(0rem) grayscale(0) brightness(.5);}
+	100% {filter:blur(4rem) grayscale(1) brightness(.3);}
+} */
+
+
+
+.noisebg{
+	background-image: url(/assets/noisebg.webp);
+	background-size: 20%;
+	background-repeat: repeat;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity:0.05;
+	pointer-events: none;
+	z-index: 9;
+
+}
+
+
+section.nb, section.nb .projectimg{
+	filter:blur(0) grayscale(0) brightness(1);
+}
+
+#canvas {
+	position: fixed;
+	left: 5vw;
+	top: 10vh;
+	width: 90vw;
+	height: 80vh;
+filter: blur(5px);
+z-index:-1;
+}
+
+.about{
+  display: none;
+}
+
+.aboutText{
+	width:33vw;
+	margin: auto;
+	padding-top:10vh;
+	text-align: center;
+}
+
+/* .youtube-link {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+} */
+
+.rgrad-overlay{
+	opacity:.22;
+	position: fixed;
+	height: 400vh;
+	width: 138vw;
+	top: -100vh;
+  left: -19vw;
+	background: radial-gradient(50% 50% at 50% 50%,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 0.0127407) 13.27%,
+		rgba(0, 0, 0, 0.0485926) 24.51%,
+		rgba(0, 0, 0, 0.104) 33.96%,
+		rgba(0, 0, 0, 0.175407) 41.89%,
+		rgba(0, 0, 0, 0.259259) 48.53%,
+		rgba(0, 0, 0, 0.352) 54.15%,
+		rgba(0, 0, 0, 0.450074) 58.99%,
+		rgba(0, 0, 0, 0.549926) 63.31%,
+		rgba(0, 0, 0, 0.648) 67.35%,
+		rgba(0, 0, 0, 0.740741) 71.38%,
+		rgba(0, 0, 0, 0.824593) 75.63%,
+		rgba(0, 0, 0, 0.896) 80.37%,
+		rgba(0, 0, 0, 0.951407) 85.84%,
+		rgba(0, 0, 0, 0.987259) 92.3%,
+		#000000 100%);
+		pointer-events: none;
+			z-index: 9;
+}
+
+
+#fullview > div:nth-child(even) {
+  background-color: #282c34;
+  color: #ffffff;
+}
+
+.aboutImage {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 4rem;
+    background-image: url(assets/CrisMolleeGrayscale.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*
+iframe {
+  width:100%;
+  height:45vh;
+} */
+
+iframe {
+	width:800px;
+	height:500px;
+}
+
+/* ---------------------------------------------------------------- */
+@media (max-width: 640px){
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: .75rem;
+  }
+
+  footer p{
+    display: none;
+  }
+
+  .role, footer a {
+    font-size: 10px;
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  .imgscalecontainer{
+    width: 80vw;
+height: 50vw;
+  }
+
+  .sectiontext{
+    width: 90vw;
+    word-break: break-word;
+    margin-top:-60vh;
+    right:0px;
+    padding-right:5vw;
+  }
+
+  .sectiontext * {
+    text-align: center;
+    width: 100%;
+  }
+
+  .but {
+    width: 10rem;
+align-self: center;
+margin-top: 2rem;
+  }
+
+  header *{
+    padding: 1rem;
+  }
+
+  #about{
+    display: none;
+    flex-direction: column;
+    width:80vw;
+  }
+
+  #about img{
+    padding: 10vw 0;
+  }
+
+  .aboutText{
+    width:85vw;
+    padding-top: 7.5vh;
+    font-size: 12px;
+  }
+
+  .aboutImage {
+    height: 20vh;
+    margin-bottom: 2.5vh;
+  }
+
+  .projecttext {
+    font-size: 12px;
+  }
+
+  iframe {
+    width:80vw;
+		height: auto;
+  }
+
+  .closebut {
+    position: fixed;
+    top: -15vh;
+    right: -1.5rem;
+    padding: 0.5rem;
+    width: 3rem;
+  }
+
+	.zoom, .project_img {
+		flex-direction: column;
+		padding:2rem 0;
+	}
+
+	.project_img > * {
+		padding:4rem 0;
+	}
+
+
+}
